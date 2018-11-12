@@ -5,7 +5,7 @@ module.exports = function(){
 
   app.set('port', process.env.PORT || 3001);
 
-  var clientRouter = require("../app/routes/usuario");
+  var usuarioRouter = require("../app/routes/usuario");
 
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8100');
@@ -14,7 +14,7 @@ module.exports = function(){
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
   });
-  app.use('/usuario', clientRouter);
+  app.use('/usuario', usuarioRouter);
 
   app.use(express.static('./public'));
 
