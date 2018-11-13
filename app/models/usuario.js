@@ -1,19 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(
-    process.env.PG_DATABASE, 
-    process.env.PG_USERNAME, 
-    process.env.PG_PASSWORD, {
-    host: process.env.PG_HOST,
-    dialect: 'postgres',
-    operatorsAliases: false,
-
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    }
-});
+const sequelize = new Sequelize("postgres://copex:copex@localhost:5432/copex");
 
 const Perfil = require("../models/perfil");
 
@@ -58,7 +44,7 @@ var Usuario = sequelize.define('usuario', {
       defaultValue: Sequelize.NOW,
       allowNull: false
   },
-  dt_manuntencao: {
+  dt_manutencao: {
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW,
       allowNull: false
@@ -73,6 +59,6 @@ var Usuario = sequelize.define('usuario', {
       },
       allowNull: false
   }
-}, {timestamps: false});
+}, {timestamps: false, freezeTableName: true, tableName: 'usuario'});
 
 module.exports = Usuario;
