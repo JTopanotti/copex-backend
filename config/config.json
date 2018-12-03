@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "copex",
+    "password": "copex",
+    "database": "copex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "copex",
+    "password": "copex",
+    "database": "copex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "copex",
+    "password": "copex",
+    "database": "copex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

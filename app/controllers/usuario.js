@@ -2,7 +2,7 @@ const Usuario = require("../models/usuario");
 
 
 
-module.exports.list = async (req, res) => {
+module.exports.listar = async (req, res) => {
     Usuario.findAll().then(values => {
         res.json(values);
     }).catch(error => {
