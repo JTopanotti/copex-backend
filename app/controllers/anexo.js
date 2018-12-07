@@ -18,15 +18,19 @@ module.exports.salvar = async (req, res) => {
     }
 
     if(filename){
-        Anexo.create({nm_arquivo: filename, tp_arquivo: "image"})
-        .then(() => {
-            Anexo.findOrCreate({where: {nm_arquivo: filename}, 
-                                defaults: {nm_arquivo: filename, tp_arquivo: "image"}})
-        })
-        .spread((anexo, created) => {
-            console.log(anexo.get({plain: true}));
-            console.log(created);
-        });
-    }
-    res.json(console.log(anexo.get({plain: true})));
+        Anexo.findOrCreate({where: {nm_arquivo: filename}, 
+                            defaults: {nm_arquivo: filename, tp_arquivo: "image"}})
+            .spread((anexo, created) => {
+                console.log(anexo.get({
+                    plain: true
+                }));
+                console.log(created);
+                res.json(console.log(anexo.get({plain: true})));
+            })
+            .catch(error => {
+                console.error(error);
+                res.json("Anexo não salvo, verifique os logs da aplicação");
+            });  
+        
+    }    
 }

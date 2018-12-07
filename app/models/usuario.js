@@ -5,11 +5,11 @@ const Perfil = require("../models/perfil");
 
 
 var Usuario = sequelize.define('usuario', {
-  cd_matricula: {
-      type: Sequelize.STRING(20),
-      primaryKey: true,
-      unique: true
-  }, 
+//   cd_matricula: {
+//       type: Sequelize.STRING(20),
+//       primaryKey: true,
+//       unique: true
+//   }, 
   nm_usuario: {
       type: Sequelize.STRING,
       allowNull: false

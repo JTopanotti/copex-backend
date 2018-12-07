@@ -1,7 +1,11 @@
 var express = require('express');
+var dotenv = require('dotenv');
 
 module.exports = function(){
   var app = express();
+  dotenv.config();
+
+  console.log(process.env.PG_URL);
 
   app.set('port', process.env.PORT || 3001);
 
