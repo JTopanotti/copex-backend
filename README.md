@@ -1,5 +1,5 @@
 ## copex-backend
-#Backend para a Aplicação COPEX (UNESC), feita em Javascript (NodeJS)
+# Backend para a Aplicação COPEX (UNESC), feita em Javascript (NodeJS)
 
 **Instalação de dependências**
 ```
@@ -12,7 +12,7 @@ npm install
 node index.js
 ```
 
-#Descrição rápida dos diretórios /models, /routes, /controllers
+# Descrição rápida dos diretórios /models, /routes, /controllers
 
 **/models**
 Contém os modelos definidos em Javascript, que espelham as tabelas no banco de dados.
